@@ -8,5 +8,5 @@
     "lint": "eslint .",
     "gen": "node scripts/gen-capabilities.js && node scripts/gen-driver.js && node scripts/add-languages.js"
   },
-  "license": "GPL-3.0"
+  "license": "MIT"
 }

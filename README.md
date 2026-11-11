@@ -53,3 +53,7 @@ keyed by the English text); `npm run gen` fails if a translation is missing.
 ## Support
 
 help@charlesarnaud.be — community app, not affiliated with STROOHM or Monta.
+
+## License
+
+MIT — see [LICENSE](LICENSE). The STROOHM name and logo belong to their owner; this community app is not affiliated with STROOHM or Monta.
