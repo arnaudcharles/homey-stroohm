@@ -1,0 +1,22 @@
+<header class="homey-header">
+  <h1 class="homey-title" data-i18n="pair.intro.title"></h1>
+</header>
+
+<ol class="steps">
+  <li data-i18n="pair.intro.step1"></li>
+  <li data-i18n="pair.intro.step2"></li>
+  <li data-i18n="pair.intro.step3"></li>
+</ol>
+<p class="homey-subtitle" data-i18n="pair.intro.note"></p>
+
+<button class="homey-button-primary-full" id="next" data-i18n="pair.intro.next"></button>
+
+<style>
+  .steps { padding-inline-start: 20px; line-height: 1.5; }
+  .steps li { margin-block: 6px; }
+  #next { margin-block-start: 16px; }
+</style>
+
+<script type="application/javascript">
+  document.getElementById('next').addEventListener('click', () => Homey.showView('credentials'));
+</script>

@@ -1,0 +1,67 @@
+{
+  "id": "month_closed",
+  "title": {
+    "en": "A month has been closed",
+    "fr": "Un mois vient d'être clôturé",
+    "nl": "Een maand is afgesloten",
+    "de": "Ein Monat wurde abgeschlossen",
+    "it": "Un mese è stato chiuso"
+  },
+  "tokens": [
+    {
+      "name": "month",
+      "type": "string",
+      "title": {
+        "en": "Month",
+        "fr": "Mois",
+        "nl": "Maand",
+        "de": "Monat",
+        "it": "Mese"
+      },
+      "example": "2026-10"
+    },
+    {
+      "name": "kwh",
+      "type": "number",
+      "title": {
+        "en": "Home kWh",
+        "fr": "kWh maison",
+        "nl": "kWh thuis",
+        "de": "kWh zu Hause",
+        "it": "kWh a casa"
+      },
+      "example": 130
+    },
+    {
+      "name": "due",
+      "type": "number",
+      "title": {
+        "en": "Refund due",
+        "fr": "Remboursement dû",
+        "nl": "Verschuldigd",
+        "de": "Fällige Rückerstattung",
+        "it": "Rimborso dovuto"
+      },
+      "example": 49.1
+    },
+    {
+      "name": "pending",
+      "type": "number",
+      "title": {
+        "en": "Pending",
+        "fr": "En attente",
+        "nl": "In afwachting",
+        "de": "Ausstehend",
+        "it": "In attesa"
+      },
+      "example": 14.3
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    }
+  ]
+}

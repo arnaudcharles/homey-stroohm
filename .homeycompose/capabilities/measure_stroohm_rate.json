@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Refund rate",
+    "fr": "Taux de remboursement",
+    "nl": "Terugbetalingstarief",
+    "de": "Erstattungssatz",
+    "it": "Tariffa di rimborso"
+  },
+  "units": {
+    "en": "€/kWh"
+  },
+  "decimals": 3,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

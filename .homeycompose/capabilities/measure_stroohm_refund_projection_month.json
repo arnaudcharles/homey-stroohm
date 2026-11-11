@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Refund projected this month",
+    "fr": "Remboursement projeté ce mois",
+    "nl": "Verwachte terugbetaling deze maand",
+    "de": "Erwartete Rückerstattung diesen Monat",
+    "it": "Rimborso previsto questo mese"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

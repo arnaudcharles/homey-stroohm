@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Refund due this year",
+    "fr": "Remboursement dû cette année",
+    "nl": "Terugbetaling verschuldigd dit jaar",
+    "de": "Fällige Rückerstattung dieses Jahr",
+    "it": "Rimborso dovuto quest'anno"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

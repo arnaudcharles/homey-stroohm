@@ -1,0 +1,44 @@
+{
+  "id": "pending_above",
+  "title": {
+    "en": "Pending refund is above an amount",
+    "fr": "Le remboursement en attente dépasse un montant",
+    "nl": "Terugbetaling in afwachting is hoger dan een bedrag",
+    "de": "Ausstehende Rückerstattung liegt über einem Betrag",
+    "it": "Il rimborso in attesa supera un importo"
+  },
+  "titleFormatted": {
+    "en": "Pending refund is !{{above|not above}} [[amount]] €",
+    "fr": "Le remboursement en attente est !{{supérieur|inférieur ou égal}} à [[amount]] €",
+    "nl": "Terugbetaling in afwachting is !{{hoger|niet hoger}} dan [[amount]] €",
+    "de": "Ausstehende Rückerstattung liegt !{{über|nicht über}} [[amount]] €",
+    "it": "Il rimborso in attesa !{{supera|non supera}} [[amount]] €"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    },
+    {
+      "name": "amount",
+      "type": "number",
+      "title": {
+        "en": "Amount",
+        "fr": "Montant",
+        "nl": "Bedrag",
+        "de": "Betrag",
+        "it": "Importo"
+      },
+      "placeholder": {
+        "en": "50",
+        "fr": "50",
+        "nl": "50",
+        "de": "50",
+        "it": "50"
+      },
+      "min": 0,
+      "step": 1
+    }
+  ]
+}

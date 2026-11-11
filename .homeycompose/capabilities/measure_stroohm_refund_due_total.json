@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Refund due total",
+    "fr": "Remboursement dû total",
+    "nl": "Terugbetaling verschuldigd totaal",
+    "de": "Fällige Rückerstattung gesamt",
+    "it": "Rimborso dovuto totale"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

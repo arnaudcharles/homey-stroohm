@@ -1,0 +1,14 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Last session date",
+    "fr": "Date dernière session",
+    "nl": "Datum laatste sessie",
+    "de": "Datum letzter Ladevorgang",
+    "it": "Data ultima sessione"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg"
+}

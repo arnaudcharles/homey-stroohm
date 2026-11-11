@@ -1,0 +1,99 @@
+<header class="homey-header">
+  <h1 class="homey-title" data-i18n="pair.setup.title"></h1>
+  <p class="homey-subtitle" data-i18n="pair.setup.intro"></p>
+</header>
+
+<div class="homey-form">
+  <div class="homey-form-group" id="chargersGroup" hidden>
+    <fieldset class="homey-form-checkbox-set">
+      <legend class="homey-form-checkbox-set-title" data-i18n="pair.setup.chargers"></legend>
+      <div id="chargers"></div>
+    </fieldset>
+  </div>
+
+  <fieldset class="homey-form-fieldset">
+    <legend class="homey-form-legend" data-i18n="pair.setup.older"></legend>
+    <p class="homey-subtitle" data-i18n="pair.setup.olderHint"></p>
+    <div id="older"></div>
+    <button class="homey-button-transparent" id="addOlder" type="button" data-i18n="pair.setup.addMonth"></button>
+  </fieldset>
+
+  <button class="homey-button-primary-full" id="save" type="button" data-i18n="pair.setup.add"></button>
+</div>
+
+<style>
+  [hidden] { display: none !important; }
+  .older-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-block-end: 14px; }
+  .older-row > * { min-width: 0; }
+  #save { margin-block-start: 16px; }
+</style>
+
+<script type="application/javascript">
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  let homeIds = [];
+
+  async function load() {
+    let data;
+    try {
+      data = await Homey.emit('getSetup', { homeIds });
+    } catch (err) {
+      Homey.alert((err && err.message) || String(err), 'error');
+      return;
+    }
+    homeIds = data.homeIds;
+    $('chargersGroup').hidden = data.chargers.length < 2;
+    $('chargers').innerHTML = data.chargers.map((c) => `
+      <label class="homey-form-checkbox">
+        <input class="homey-form-checkbox-input" type="checkbox" name="cp" value="${esc(c.id)}" ${homeIds.includes(c.id) ? 'checked' : ''}/>
+        <span class="homey-form-checkbox-checkmark"></span>
+        <span class="homey-form-checkbox-text">${esc(c.name)}</span>
+      </label>`).join('');
+    document.querySelectorAll('input[name=cp]').forEach((el) => el.addEventListener('change', () => {
+      homeIds = [...document.querySelectorAll('input[name=cp]:checked')].map((x) => x.value);
+    }));
+  }
+
+  // <input type="month"> is not supported by the Homey webview: month + year selects instead.
+  function addOlder() {
+    const lang = Homey.__('lang') || 'en';
+    const monthName = (m) => new Intl.DateTimeFormat(lang, { month: 'long' }).format(new Date(2000, m - 1, 1));
+    const y0 = new Date().getFullYear();
+    const row = document.createElement('div');
+    row.className = 'older-row';
+    row.innerHTML = `
+      <select class="homey-form-select" aria-label="${esc(Homey.__('pair.setup.month'))}">
+        <option value="">${esc(Homey.__('pair.setup.wholeYear'))}</option>
+        ${Array.from({ length: 12 }, (_, i) => `<option value="${String(i + 1).padStart(2, '0')}">${esc(monthName(i + 1))}</option>`).join('')}
+      </select>
+      <select class="homey-form-select" aria-label="${esc(Homey.__('pair.setup.year'))}">
+        ${Array.from({ length: 8 }, (_, i) => `<option value="${y0 - i}">${y0 - i}</option>`).join('')}
+      </select>
+      <input class="homey-form-input" type="number" step="0.01" min="0" inputmode="decimal" data-field="amount" placeholder="${esc(Homey.__('pair.setup.amount'))}"/>
+      <input class="homey-form-input" type="number" step="0.1" min="0" inputmode="decimal" data-field="kwh" placeholder="${esc(Homey.__('pair.setup.kwh'))}"/>
+      <input class="homey-form-input" type="number" step="0.1" min="0" inputmode="decimal" data-field="publicKwh" placeholder="${esc(Homey.__('pair.setup.publicKwh'))}"/>
+      <input class="homey-form-input" type="number" step="0.01" min="0" inputmode="decimal" data-field="publicAmount" placeholder="${esc(Homey.__('pair.setup.publicAmount'))}"/>`;
+    $('older').appendChild(row);
+  }
+
+  $('addOlder').addEventListener('click', addOlder);
+
+  $('save').addEventListener('click', async () => {
+    const external = {};
+    document.querySelectorAll('#older .older-row').forEach((row) => {
+      const [month, year] = row.querySelectorAll('select');
+      const num = (f) => parseFloat(String(row.querySelector(`input[data-field="${f}"]`).value).replace(',', '.')) || 0;
+      const e = { amount: num('amount'), kwh: num('kwh'), publicKwh: num('publicKwh'), publicAmount: num('publicAmount') };
+      if (Object.values(e).some((v) => v > 0)) external[month.value ? `${year.value}-${month.value}` : year.value] = e;
+    });
+    try {
+      const device = await Homey.emit('saveSetup', { homeIds, external });
+      await Homey.createDevice(device);
+      Homey.done();
+    } catch (err) {
+      Homey.alert((err && err.message) || String(err), 'error');
+    }
+  });
+
+  load();
+</script>

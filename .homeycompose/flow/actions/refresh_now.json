@@ -1,0 +1,24 @@
+{
+  "id": "refresh_now",
+  "title": {
+    "en": "Refresh now",
+    "fr": "Actualiser maintenant",
+    "nl": "Nu vernieuwen",
+    "de": "Jetzt aktualisieren",
+    "it": "Aggiorna ora"
+  },
+  "titleFormatted": {
+    "en": "Refresh now",
+    "fr": "Actualiser maintenant",
+    "nl": "Nu vernieuwen",
+    "de": "Jetzt aktualisieren",
+    "it": "Aggiorna ora"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    }
+  ]
+}

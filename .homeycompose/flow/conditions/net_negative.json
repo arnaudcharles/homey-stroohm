@@ -1,0 +1,24 @@
+{
+  "id": "net_negative",
+  "title": {
+    "en": "The result this month is negative",
+    "fr": "Le résultat de ce mois est négatif",
+    "nl": "Het resultaat van deze maand is negatief",
+    "de": "Das Ergebnis dieses Monats ist negativ",
+    "it": "Il risultato di questo mese è negativo"
+  },
+  "titleFormatted": {
+    "en": "This month's result is !{{negative|not negative}}",
+    "fr": "Le résultat de ce mois est !{{négatif|non négatif}}",
+    "nl": "Het resultaat van deze maand is !{{negatief|niet negatief}}",
+    "de": "Das Ergebnis dieses Monats ist !{{negativ|nicht negativ}}",
+    "it": "Il risultato di questo mese !{{è negativo|non è negativo}}"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    }
+  ]
+}

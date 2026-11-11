@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Home share total",
+    "fr": "Part maison total",
+    "nl": "Aandeel thuis totaal",
+    "de": "Anteil zu Hause gesamt",
+    "it": "Quota a casa totale"
+  },
+  "units": {
+    "en": "%"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

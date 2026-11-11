@@ -1,0 +1,12 @@
+{
+  "name": "be.charlesarnaud.stroohm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Homey app: home-charging reimbursement tracking for STROOHM / Monta",
+  "scripts": {
+    "test": "node --test test/",
+    "lint": "eslint .",
+    "gen": "node scripts/gen-capabilities.js && node scripts/gen-driver.js && node scripts/add-languages.js"
+  },
+  "license": "GPL-3.0"
+}

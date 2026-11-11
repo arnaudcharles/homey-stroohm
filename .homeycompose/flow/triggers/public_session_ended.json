@@ -1,0 +1,43 @@
+{
+  "id": "public_session_ended",
+  "title": {
+    "en": "Public charging session ended",
+    "fr": "Session de recharge publique terminée",
+    "nl": "Openbare laadsessie beëindigd",
+    "de": "Öffentlicher Ladevorgang beendet",
+    "it": "Sessione di ricarica pubblica terminata"
+  },
+  "tokens": [
+    {
+      "name": "kwh",
+      "type": "number",
+      "title": {
+        "en": "kWh",
+        "fr": "kWh",
+        "nl": "kWh",
+        "de": "kWh",
+        "it": "kWh"
+      },
+      "example": 22.1
+    },
+    {
+      "name": "amount",
+      "type": "number",
+      "title": {
+        "en": "Amount",
+        "fr": "Montant",
+        "nl": "Bedrag",
+        "de": "Betrag",
+        "it": "Importo"
+      },
+      "example": 14.2
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Net result this month",
+    "fr": "Gain/perte ce mois",
+    "nl": "Nettoresultaat deze maand",
+    "de": "Nettoergebnis diesen Monat",
+    "it": "Risultato netto questo mese"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

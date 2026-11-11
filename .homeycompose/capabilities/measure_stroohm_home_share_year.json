@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Home share this year",
+    "fr": "Part maison cette année",
+    "nl": "Aandeel thuis dit jaar",
+    "de": "Anteil zu Hause dieses Jahr",
+    "it": "Quota a casa quest'anno"
+  },
+  "units": {
+    "en": "%"
+  },
+  "decimals": 0,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

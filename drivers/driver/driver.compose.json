@@ -1,0 +1,360 @@
+{
+  "name": {
+    "en": "Stroohm",
+    "fr": "Stroohm",
+    "nl": "Stroohm",
+    "de": "Stroohm",
+    "it": "Stroohm"
+  },
+  "class": "other",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
+  "capabilities": [
+    "measure_stroohm_cost_per_kwh_month",
+    "measure_stroohm_home_cost_month",
+    "measure_stroohm_home_kwh_month",
+    "measure_stroohm_home_kwh_prev_month",
+    "measure_stroohm_home_kwh_total",
+    "measure_stroohm_home_kwh_year",
+    "measure_stroohm_home_share_month",
+    "measure_stroohm_home_share_total",
+    "measure_stroohm_home_share_year",
+    "measure_stroohm_last_session_kwh",
+    "measure_stroohm_last_session_refund",
+    "measure_stroohm_net_month",
+    "measure_stroohm_net_total",
+    "measure_stroohm_net_year",
+    "measure_stroohm_public_amount_month",
+    "measure_stroohm_public_amount_total",
+    "measure_stroohm_public_amount_year",
+    "measure_stroohm_public_kwh_month",
+    "measure_stroohm_public_kwh_total",
+    "measure_stroohm_public_kwh_year",
+    "measure_stroohm_rate",
+    "measure_stroohm_refund_due_month",
+    "measure_stroohm_refund_due_prev_month",
+    "measure_stroohm_refund_due_total",
+    "measure_stroohm_refund_due_year",
+    "measure_stroohm_refund_paid_total",
+    "measure_stroohm_refund_pending",
+    "measure_stroohm_refund_projection_month",
+    "stroohm_last_session_date"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "intro"
+    },
+    {
+      "id": "credentials"
+    },
+    {
+      "id": "setup"
+    }
+  ],
+  "repair": [
+    {
+      "id": "credentials"
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Synchronisation",
+        "fr": "Synchronisation",
+        "nl": "Synchronisatie",
+        "de": "Synchronisierung",
+        "it": "Sincronizzazione"
+      },
+      "children": [
+        {
+          "id": "refresh_interval",
+          "type": "number",
+          "value": 60,
+          "min": 15,
+          "max": 240,
+          "units": "min",
+          "label": {
+            "en": "Refresh interval (minutes)",
+            "fr": "Intervalle d'actualisation (minutes)",
+            "nl": "Vernieuwingsinterval (minuten)",
+            "de": "Aktualisierungsintervall (Minuten)",
+            "it": "Intervallo di aggiornamento (minuti)"
+          }
+        },
+        {
+          "id": "home_charger_ids",
+          "type": "text",
+          "value": "",
+          "label": {
+            "en": "Home charger id(s), comma separated",
+            "fr": "Id de la/des borne(s) maison, séparés par une virgule",
+            "nl": "Id(s) van de thuislaadpaal, gescheiden door komma",
+            "de": "ID(s) der Heimladestation, durch Komma getrennt",
+            "it": "ID della/e colonnina/e di casa, separati da virgola"
+          }
+        },
+        {
+          "id": "since",
+          "type": "text",
+          "value": "",
+          "label": {
+            "en": "Track from (YYYY-MM-DD, optional)",
+            "fr": "Suivre à partir du (AAAA-MM-JJ, optionnel)",
+            "nl": "Volgen vanaf (JJJJ-MM-DD, optioneel)",
+            "de": "Verfolgen ab (JJJJ-MM-TT, optional)",
+            "it": "Monitora dal (AAAA-MM-GG, facoltativo)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Electricity cost",
+        "fr": "Coût de l'électricité",
+        "nl": "Elektriciteitskost",
+        "de": "Stromkosten",
+        "it": "Costo dell'elettricità"
+      },
+      "children": [
+        {
+          "id": "cost_mode",
+          "type": "dropdown",
+          "value": "monta",
+          "label": {
+            "en": "Cost based on",
+            "fr": "Coût calculé selon",
+            "nl": "Kost berekend op basis van",
+            "de": "Kosten berechnet nach",
+            "it": "Costo calcolato in base a"
+          },
+          "hint": {
+            "en": "STROOHM app: the tariff set in the STROOHM app. Fixed / day-night: your own tariff, applied to every home session (also past ones).",
+            "fr": "App STROOHM : le tarif encodé dans l'app STROOHM. Fixe / jour-nuit : votre propre tarif, appliqué à toutes les sessions maison (passées comprises).",
+            "nl": "STROOHM-app: het tarief ingesteld in de STROOHM-app. Vast / dag-nacht: je eigen tarief, toegepast op alle thuissessies (ook eerdere).",
+            "de": "STROOHM-App: der in der STROOHM-App hinterlegte Tarif. Fest / Tag-Nacht: Ihr eigener Tarif, angewendet auf jeden Ladevorgang zu Hause (auch frühere).",
+            "it": "App STROOHM: la tariffa impostata nell'app STROOHM. Fissa / giorno-notte: la tua tariffa, applicata a ogni sessione a casa (anche passate)."
+          },
+          "values": [
+            {
+              "id": "monta",
+              "label": {
+                "en": "STROOHM app tariff",
+                "fr": "Tarif de l'app STROOHM",
+                "nl": "Tarief uit de STROOHM-app",
+                "de": "Tarif aus der STROOHM-App",
+                "it": "Tariffa dell'app STROOHM"
+              }
+            },
+            {
+              "id": "fixed",
+              "label": {
+                "en": "Fixed price",
+                "fr": "Prix fixe",
+                "nl": "Vaste prijs",
+                "de": "Festpreis",
+                "it": "Prezzo fisso"
+              }
+            },
+            {
+              "id": "dual",
+              "label": {
+                "en": "Day / night (dual rate)",
+                "fr": "Jour / nuit (bihoraire)",
+                "nl": "Dag / nacht (tweevoudig)",
+                "de": "Tag / Nacht (Doppeltarif)",
+                "it": "Giorno / notte (bioraria)"
+              }
+            }
+          ]
+        },
+        {
+          "id": "price_fixed",
+          "type": "number",
+          "value": 0,
+          "min": 0,
+          "max": 5,
+          "step": 0.0001,
+          "units": "€/kWh",
+          "label": {
+            "en": "Fixed price",
+            "fr": "Prix fixe",
+            "nl": "Vaste prijs",
+            "de": "Festpreis",
+            "it": "Prezzo fisso"
+          }
+        },
+        {
+          "id": "price_day",
+          "type": "number",
+          "value": 0,
+          "min": 0,
+          "max": 5,
+          "step": 0.0001,
+          "units": "€/kWh",
+          "label": {
+            "en": "Day price (peak)",
+            "fr": "Prix jour (heures pleines)",
+            "nl": "Dagprijs (piekuren)",
+            "de": "Tagpreis (Hochtarif)",
+            "it": "Prezzo giorno (ore di punta)"
+          }
+        },
+        {
+          "id": "price_night",
+          "type": "number",
+          "value": 0,
+          "min": 0,
+          "max": 5,
+          "step": 0.0001,
+          "units": "€/kWh",
+          "label": {
+            "en": "Night price (off-peak)",
+            "fr": "Prix nuit (heures creuses)",
+            "nl": "Nachtprijs (daluren)",
+            "de": "Nachtpreis (Niedertarif)",
+            "it": "Prezzo notte (fuori punta)"
+          }
+        },
+        {
+          "id": "night_profile",
+          "type": "dropdown",
+          "value": "measured",
+          "label": {
+            "en": "Day / night split",
+            "fr": "Répartition jour / nuit",
+            "nl": "Verdeling dag / nacht",
+            "de": "Aufteilung Tag / Nacht",
+            "it": "Ripartizione giorno / notte"
+          },
+          "hint": {
+            "en": "Measured: the real hour of each kWh (from STROOHM/Monta), priced on your off-peak hours. Otherwise a fixed split.",
+            "fr": "Mesurée : l'heure réelle de chaque kWh (données STROOHM/Monta), tarifée selon vos heures creuses. Sinon une répartition fixe.",
+            "nl": "Gemeten: het echte uur van elke kWh (STROOHM/Monta), geprijsd volgens je daluren. Anders een vaste verdeling.",
+            "de": "Gemessen: die tatsächliche Stunde jeder kWh (von STROOHM/Monta), bewertet nach Ihren Niedertarifzeiten. Sonst eine feste Aufteilung.",
+            "it": "Misurata: l'ora reale di ogni kWh (da STROOHM/Monta), valorizzata secondo le tue fasce fuori punta. Altrimenti una ripartizione fissa."
+          },
+          "values": [
+            {
+              "id": "measured",
+              "label": {
+                "en": "Measured (recommended)",
+                "fr": "Mesurée (recommandé)",
+                "nl": "Gemeten (aanbevolen)",
+                "de": "Gemessen (empfohlen)",
+                "it": "Misurata (consigliato)"
+              }
+            },
+            {
+              "id": "night",
+              "label": {
+                "en": "Always at night (low)",
+                "fr": "Toujours la nuit (bas)",
+                "nl": "Altijd 's nachts (laag)",
+                "de": "Immer nachts (niedrig)",
+                "it": "Sempre di notte (bassa)"
+              }
+            },
+            {
+              "id": "mix",
+              "label": {
+                "en": "50 % / 50 % (average)",
+                "fr": "50 % / 50 % (moyen)",
+                "nl": "50 % / 50 % (gemiddeld)",
+                "de": "50 % / 50 % (Durchschnitt)",
+                "it": "50 % / 50 % (media)"
+              }
+            },
+            {
+              "id": "day",
+              "label": {
+                "en": "Always by day (high)",
+                "fr": "Toujours en journée (haut)",
+                "nl": "Altijd overdag (hoog)",
+                "de": "Immer tagsüber (hoch)",
+                "it": "Sempre di giorno (alta)"
+              }
+            },
+            {
+              "id": "custom",
+              "label": {
+                "en": "Custom share",
+                "fr": "Part personnalisée",
+                "nl": "Eigen verdeling",
+                "de": "Eigener Anteil",
+                "it": "Quota personalizzata"
+              }
+            }
+          ]
+        },
+        {
+          "id": "night_share",
+          "type": "number",
+          "value": 80,
+          "min": 0,
+          "max": 100,
+          "units": "%",
+          "label": {
+            "en": "Share charged at night (custom)",
+            "fr": "Part rechargée la nuit (personnalisée)",
+            "nl": "Aandeel 's nachts geladen (eigen)",
+            "de": "Nachts geladener Anteil (eigener)",
+            "it": "Quota ricaricata di notte (personalizzata)"
+          }
+        },
+        {
+          "id": "offpeak_start",
+          "type": "number",
+          "value": 22,
+          "min": 0,
+          "max": 23,
+          "units": "h",
+          "label": {
+            "en": "Off-peak starts at",
+            "fr": "Heures creuses à partir de",
+            "nl": "Daluren vanaf",
+            "de": "Niedertarif ab",
+            "it": "Fuori punta dalle"
+          }
+        },
+        {
+          "id": "offpeak_end",
+          "type": "number",
+          "value": 7,
+          "min": 0,
+          "max": 23,
+          "units": "h",
+          "label": {
+            "en": "Off-peak ends at",
+            "fr": "Heures creuses jusqu'à",
+            "nl": "Daluren tot",
+            "de": "Niedertarif bis",
+            "it": "Fuori punta fino alle"
+          }
+        },
+        {
+          "id": "offpeak_weekend",
+          "type": "checkbox",
+          "value": true,
+          "label": {
+            "en": "Whole weekend is off-peak",
+            "fr": "Week-end entier en heures creuses",
+            "nl": "Volledig weekend daluren",
+            "de": "Ganzes Wochenende im Niedertarif",
+            "it": "Tutto il weekend fuori punta"
+          }
+        }
+      ]
+    }
+  ]
+}

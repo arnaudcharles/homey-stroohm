@@ -1,0 +1,36 @@
+{
+  "name": {
+    "en": "Refund this month",
+    "fr": "Remboursement du mois",
+    "nl": "Terugbetaling deze maand",
+    "de": "Rückerstattung diesen Monat",
+    "it": "Rimborso del mese"
+  },
+  "height": 260,
+  "settings": [
+    {
+      "id": "device",
+      "type": "autocomplete",
+      "title": {
+        "en": "Device",
+        "fr": "Appareil",
+        "nl": "Apparaat",
+        "de": "Gerät",
+        "it": "Dispositivo"
+      },
+      "hint": {
+        "en": "Leave empty to use your only Stroohm device.",
+        "fr": "Laissez vide pour utiliser votre unique appareil Stroohm.",
+        "nl": "Leeg laten om je enige Stroohm-apparaat te gebruiken.",
+        "de": "Leer lassen, um Ihr einziges Stroohm-Gerät zu verwenden.",
+        "it": "Lascia vuoto per usare il tuo unico dispositivo Stroohm."
+      }
+    }
+  ],
+  "api": {
+    "getData": {
+      "method": "GET",
+      "path": "/"
+    }
+  }
+}

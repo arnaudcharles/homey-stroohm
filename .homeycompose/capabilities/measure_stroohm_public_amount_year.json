@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Public charging cost this year",
+    "fr": "Coût recharge publique cette année",
+    "nl": "Kost openbaar laden dit jaar",
+    "de": "Kosten öffentliches Laden dieses Jahr",
+    "it": "Costo ricarica pubblica quest'anno"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

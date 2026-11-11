@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Refunded total (assumed)",
+    "fr": "Remboursé total (estimé)",
+    "nl": "Terugbetaald totaal (verondersteld)",
+    "de": "Erstattet gesamt (angenommen)",
+    "it": "Rimborsato totale (stimato)"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

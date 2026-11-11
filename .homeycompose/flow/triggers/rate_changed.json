@@ -1,0 +1,43 @@
+{
+  "id": "rate_changed",
+  "title": {
+    "en": "The refund rate changed",
+    "fr": "Le taux de remboursement a changé",
+    "nl": "Het terugbetalingstarief is gewijzigd",
+    "de": "Der Erstattungssatz hat sich geändert",
+    "it": "La tariffa di rimborso è cambiata"
+  },
+  "tokens": [
+    {
+      "name": "old_rate",
+      "type": "number",
+      "title": {
+        "en": "Old rate",
+        "fr": "Ancien taux",
+        "nl": "Oud tarief",
+        "de": "Alter Satz",
+        "it": "Tariffa precedente"
+      },
+      "example": 0.378
+    },
+    {
+      "name": "new_rate",
+      "type": "number",
+      "title": {
+        "en": "New rate",
+        "fr": "Nouveau taux",
+        "nl": "Nieuw tarief",
+        "de": "Neuer Satz",
+        "it": "Nuova tariffa"
+      },
+      "example": 0.39
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    }
+  ]
+}

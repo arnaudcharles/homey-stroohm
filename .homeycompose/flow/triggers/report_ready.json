@@ -1,0 +1,103 @@
+{
+  "id": "report_ready",
+  "title": {
+    "en": "A monthly report is ready",
+    "fr": "Un rapport mensuel est prêt",
+    "nl": "Een maandrapport is klaar",
+    "de": "Ein Monatsbericht ist bereit",
+    "it": "Un report mensile è pronto"
+  },
+  "tokens": [
+    {
+      "name": "month",
+      "type": "string",
+      "title": {
+        "en": "Month",
+        "fr": "Mois",
+        "nl": "Maand",
+        "de": "Monat",
+        "it": "Mese"
+      },
+      "example": "2026-10"
+    },
+    {
+      "name": "summary",
+      "type": "string",
+      "title": {
+        "en": "Summary",
+        "fr": "Résumé",
+        "nl": "Samenvatting",
+        "de": "Zusammenfassung",
+        "it": "Riepilogo"
+      },
+      "example": "2026-10 : 130 kWh, 49,10 € dus, 49,10 € reçus."
+    },
+    {
+      "name": "csv",
+      "type": "string",
+      "title": {
+        "en": "CSV",
+        "fr": "CSV",
+        "nl": "CSV",
+        "de": "CSV",
+        "it": "CSV"
+      },
+      "example": "Mois;kWh maison;Remboursement dû (€)"
+    },
+    {
+      "name": "kwh",
+      "type": "number",
+      "title": {
+        "en": "Home kWh",
+        "fr": "kWh maison",
+        "nl": "kWh thuis",
+        "de": "kWh zu Hause",
+        "it": "kWh a casa"
+      },
+      "example": 130
+    },
+    {
+      "name": "due",
+      "type": "number",
+      "title": {
+        "en": "Refund due",
+        "fr": "Remboursement dû",
+        "nl": "Verschuldigd",
+        "de": "Fällige Rückerstattung",
+        "it": "Rimborso dovuto"
+      },
+      "example": 49.1
+    },
+    {
+      "name": "paid",
+      "type": "number",
+      "title": {
+        "en": "Received",
+        "fr": "Reçu",
+        "nl": "Ontvangen",
+        "de": "Erhalten",
+        "it": "Ricevuto"
+      },
+      "example": 49.1
+    },
+    {
+      "name": "pending",
+      "type": "number",
+      "title": {
+        "en": "Pending",
+        "fr": "En attente",
+        "nl": "In afwachting",
+        "de": "Ausstehend",
+        "it": "In attesa"
+      },
+      "example": 0
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    }
+  ]
+}

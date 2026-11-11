@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    [hidden] { display: none !important; }
+    .label { color: var(--homey-text-color-light); font-size: var(--homey-font-size-small); }
+    .big { font-size: var(--homey-font-size-xxlarge); line-height: var(--homey-line-height-xxlarge); font-weight: var(--homey-font-weight-bold); }
+    .sub { color: var(--homey-text-color-light); font-size: var(--homey-font-size-small); }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--homey-su-2); margin-block: var(--homey-su-3); }
+    .stat .v { font-weight: var(--homey-font-weight-medium); }
+    .neg { color: var(--homey-text-color-danger); }
+    .pos { color: var(--homey-text-color-success); }
+    svg { display: block; width: 100%; height: 72px; }
+    .bar { fill: var(--homey-color-mono-200); }
+    .bar.cur { fill: #0E9F7E; }
+    .mlabel { fill: var(--homey-text-color-light); font-size: 10px; text-anchor: middle; }
+  </style>
+</head>
+<body class="homey-widget">
+  <div id="empty" class="sub" hidden></div>
+  <div id="content" hidden>
+    <div class="label" id="l_due"></div>
+    <div class="big" id="due"></div>
+    <div class="sub" id="projection"></div>
+    <div class="stats">
+      <div class="stat"><div class="label" id="l_kwh"></div><div class="v" id="kwh"></div></div>
+      <div class="stat"><div class="label" id="l_pending"></div><div class="v" id="pending"></div></div>
+      <div class="stat"><div class="label" id="l_net"></div><div class="v" id="net"></div></div>
+    </div>
+    <svg id="chart" viewBox="0 0 300 72" preserveAspectRatio="none" aria-hidden="true"></svg>
+  </div>
+
+  <script type="text/javascript">
+    function onHomeyReady(Homey) {
+      const $ = (id) => document.getElementById(id);
+      const lang = Homey.__('lang') || 'en';
+      const nf = (d) => new Intl.NumberFormat(lang, { minimumFractionDigits: d, maximumFractionDigits: d });
+      const eur = (n) => `${nf(2).format(n || 0)} €`;
+      const monthShort = (key) => new Intl.DateTimeFormat(lang, { month: 'short' })
+        .format(new Date(Number(key.slice(0, 4)), Number(key.slice(5, 7)) - 1, 1));
+
+      $('l_due').textContent = Homey.__('widget.due');
+      $('l_kwh').textContent = Homey.__('widget.kwh');
+      $('l_pending').textContent = Homey.__('widget.pending');
+      $('l_net').textContent = Homey.__('widget.net');
+
+      function chart(months, current) {
+        const max = Math.max(1, ...months.map((m) => m.due));
+        const w = 300 / Math.max(months.length, 1);
+        $('chart').innerHTML = months.map((m, i) => {
+          const h = Math.max(2, (m.due / max) * 52);
+          const x = i * w + w * 0.2;
+          return `<rect class="bar${m.key === current ? ' cur' : ''}" x="${x}" y="${56 - h}" width="${w * 0.6}" height="${h}" rx="3"/>`
+            + `<text class="mlabel" x="${i * w + w / 2}" y="70">${monthShort(m.key)}</text>`;
+        }).join('');
+      }
+
+      async function refresh() {
+        const deviceId = (Homey.getSettings().device || {}).id;
+        try {
+          const d = await Homey.api('GET', deviceId ? `/?deviceId=${encodeURIComponent(deviceId)}` : '/');
+          if (!d) {
+            $('empty').textContent = Homey.__('widget.none');
+            $('empty').hidden = false;
+            $('content').hidden = true;
+            return;
+          }
+          $('due').textContent = eur(d.due);
+          $('projection').textContent = `${Homey.__('widget.projection')} ${eur(d.projection)}`;
+          $('kwh').textContent = `${nf(1).format(d.kwh || 0)} kWh`;
+          $('pending').textContent = eur(d.pending);
+          $('net').textContent = eur(d.net);
+          $('net').className = `v ${d.net < 0 ? 'neg' : 'pos'}`;
+          chart(d.months || [], d.currentMonth);
+          $('content').hidden = false;
+          $('empty').hidden = true;
+        } catch (err) {
+          $('empty').textContent = (err && err.message) || String(err);
+          $('empty').hidden = false;
+        }
+      }
+
+      refresh().finally(() => Homey.ready());
+      setInterval(refresh, 5 * 60 * 1000);
+    }
+  </script>
+</body>
+</html>

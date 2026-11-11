@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Average electricity price this month",
+    "fr": "Prix moyen électricité ce mois",
+    "nl": "Gemiddelde elektriciteitsprijs deze maand",
+    "de": "Durchschnittlicher Strompreis diesen Monat",
+    "it": "Prezzo medio dell'elettricità questo mese"
+  },
+  "units": {
+    "en": "€/kWh"
+  },
+  "decimals": 3,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

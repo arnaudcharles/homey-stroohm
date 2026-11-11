@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Public charging this year",
+    "fr": "Recharge publique cette année",
+    "nl": "Openbaar laden dit jaar",
+    "de": "Öffentliches Laden dieses Jahr",
+    "it": "Ricarica pubblica quest'anno"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

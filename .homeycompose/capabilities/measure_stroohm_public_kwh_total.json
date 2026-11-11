@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Public charging total",
+    "fr": "Recharge publique total",
+    "nl": "Openbaar laden totaal",
+    "de": "Öffentliches Laden gesamt",
+    "it": "Ricarica pubblica totale"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

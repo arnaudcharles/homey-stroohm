@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Refund pending",
+    "fr": "Remboursement en attente",
+    "nl": "Terugbetaling in afwachting",
+    "de": "Ausstehende Rückerstattung",
+    "it": "Rimborso in attesa"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

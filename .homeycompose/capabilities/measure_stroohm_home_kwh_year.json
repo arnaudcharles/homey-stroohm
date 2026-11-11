@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Home charging this year",
+    "fr": "Recharge maison cette année",
+    "nl": "Thuislading dit jaar",
+    "de": "Laden zu Hause dieses Jahr",
+    "it": "Ricarica a casa quest'anno"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

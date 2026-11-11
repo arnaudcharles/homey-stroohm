@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Home charging last month",
+    "fr": "Recharge maison mois dernier",
+    "nl": "Thuislading vorige maand",
+    "de": "Laden zu Hause letzten Monat",
+    "it": "Ricarica a casa mese scorso"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

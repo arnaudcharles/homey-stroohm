@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Net result total",
+    "fr": "Gain/perte total",
+    "nl": "Nettoresultaat totaal",
+    "de": "Nettoergebnis gesamt",
+    "it": "Risultato netto totale"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

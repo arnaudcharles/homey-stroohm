@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Last home session",
+    "fr": "Dernière session maison",
+    "nl": "Laatste thuissessie",
+    "de": "Letzter Ladevorgang zu Hause",
+    "it": "Ultima sessione a casa"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

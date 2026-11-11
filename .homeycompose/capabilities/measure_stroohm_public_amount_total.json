@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Public charging cost total",
+    "fr": "Coût recharge publique total",
+    "nl": "Kost openbaar laden totaal",
+    "de": "Kosten öffentliches Laden gesamt",
+    "it": "Costo ricarica pubblica totale"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

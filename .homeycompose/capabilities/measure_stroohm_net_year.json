@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Net result this year",
+    "fr": "Gain/perte cette année",
+    "nl": "Nettoresultaat dit jaar",
+    "de": "Nettoergebnis dieses Jahr",
+    "it": "Risultato netto quest'anno"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

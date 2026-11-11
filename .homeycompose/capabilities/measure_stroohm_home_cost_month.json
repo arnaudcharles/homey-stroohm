@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Electricity cost this month",
+    "fr": "Coût électricité ce mois",
+    "nl": "Elektriciteitskost deze maand",
+    "de": "Stromkosten diesen Monat",
+    "it": "Costo elettricità questo mese"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

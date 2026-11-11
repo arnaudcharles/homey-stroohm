@@ -1,0 +1,43 @@
+{
+  "id": "month_report",
+  "title": {
+    "en": "Generate a monthly report",
+    "fr": "Générer un rapport mensuel",
+    "nl": "Maandrapport genereren",
+    "de": "Monatsbericht erstellen",
+    "it": "Genera un report mensile"
+  },
+  "titleFormatted": {
+    "en": "Generate the report of [[month]]",
+    "fr": "Générer le rapport de [[month]]",
+    "nl": "Rapport van [[month]] genereren",
+    "de": "Bericht für [[month]] erstellen",
+    "it": "Genera il report di [[month]]"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    },
+    {
+      "name": "month",
+      "type": "text",
+      "title": {
+        "en": "Month (YYYY-MM, empty = last month)",
+        "fr": "Mois (AAAA-MM, vide = mois dernier)",
+        "nl": "Maand (JJJJ-MM, leeg = vorige maand)",
+        "de": "Monat (JJJJ-MM, leer = letzter Monat)",
+        "it": "Mese (AAAA-MM, vuoto = mese scorso)"
+      },
+      "placeholder": {
+        "en": "2026-10",
+        "fr": "2026-10",
+        "nl": "2026-10",
+        "de": "2026-10",
+        "it": "2026-10"
+      },
+      "required": false
+    }
+  ]
+}

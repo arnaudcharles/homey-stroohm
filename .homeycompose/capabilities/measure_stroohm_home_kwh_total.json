@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Home charging total",
+    "fr": "Recharge maison total",
+    "nl": "Thuislading totaal",
+    "de": "Laden zu Hause gesamt",
+    "it": "Ricarica a casa totale"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

@@ -1,0 +1,61 @@
+{
+  "id": "be.charlesarnaud.stroohm",
+  "version": "1.0.0",
+  "compatibility": ">=12.3.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Stroohm",
+    "fr": "Stroohm",
+    "nl": "Stroohm",
+    "de": "Stroohm",
+    "it": "Stroohm"
+  },
+  "brandColor": "#0E9F7E",
+  "description": {
+    "en": "Track your home EV charging and the refund from your employer via STROOHM",
+    "fr": "Suivez votre recharge à domicile et le remboursement de votre employeur via STROOHM",
+    "nl": "Volg je thuisladen en de terugbetaling van je werkgever via STROOHM",
+    "de": "Verfolgen Sie das Laden Ihres E-Autos zu Hause und die Rückerstattung Ihres Arbeitgebers über STROOHM",
+    "it": "Monitora la ricarica a casa della tua auto elettrica e il rimborso del datore di lavoro tramite STROOHM"
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Arnaud Charles",
+    "email": "help@charlesarnaud.be"
+  },
+  "contributing": {},
+  "source": "https://github.com/arnaudcharles/homey-stroohm",
+  "bugs": {
+    "url": "https://github.com/arnaudcharles/homey-stroohm/issues"
+  },
+  "api": {
+    "getState": {
+      "method": "GET",
+      "path": "/state"
+    },
+    "setExternal": {
+      "method": "POST",
+      "path": "/external"
+    },
+    "setTariff": {
+      "method": "POST",
+      "path": "/tariff"
+    },
+    "getCsv": {
+      "method": "GET",
+      "path": "/csv"
+    }
+  },
+  "support": "mailto:help@charlesarnaud.be"
+}

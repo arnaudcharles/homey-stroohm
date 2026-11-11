@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+  <style>
+    [hidden] { display: none !important; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-block: 8px 16px; }
+    .card { padding: 10px; border: 1px solid rgba(127, 127, 127, .35); border-radius: 10px; }
+    .card strong { display: block; font-size: 1.25em; margin-block-start: 4px; }
+    .scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: .95em; }
+    th, td { padding: 6px 4px; border-block-end: 1px solid rgba(127, 127, 127, .3); text-align: end; white-space: nowrap; }
+    th:first-child, td:first-child { text-align: start; }
+    td .homey-form-input { width: 90px; padding-block: 4px; }
+    .neg { color: #e5484d; }
+    .pos { color: #0e9f7e; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-block: 8px; }
+    .row > select, .row > input, .row > div { flex: 1 1 40%; }
+    .row > * { flex: 1; min-width: 0; }
+    .row > button { flex: 0 0 auto; }
+    .muted { opacity: .7; }
+  </style>
+</head>
+<body>
+  <header class="homey-header">
+    <h1 class="homey-title" data-i18n="settings.title"></h1>
+  </header>
+
+  <p class="homey-subtitle" id="none" data-i18n="settings.none" hidden></p>
+
+  <div id="app" hidden>
+    <div class="homey-form-group" id="deviceGroup" hidden>
+      <label class="homey-form-label" for="device" data-i18n="settings.device"></label>
+      <select class="homey-form-select" id="device"></select>
+    </div>
+
+    <div class="cards" id="cards"></div>
+    <div id="warnings"></div>
+
+    <fieldset class="homey-form-fieldset">
+      <legend class="homey-form-legend" data-i18n="settings.tariff"></legend>
+      <p class="homey-subtitle" data-i18n="settings.tariffHint"></p>
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="t_mode" data-i18n="settings.costMode"></label>
+        <select class="homey-form-select" id="t_mode">
+          <option value="monta" data-i18n="settings.modeMonta"></option>
+          <option value="fixed" data-i18n="settings.modeFixed"></option>
+          <option value="dual" data-i18n="settings.modeDual"></option>
+        </select>
+      </div>
+      <div class="homey-form-group" data-show="fixed">
+        <label class="homey-form-label" for="t_fixed" data-i18n="settings.priceFixed"></label>
+        <input class="homey-form-input" id="t_fixed" type="number" step="0.0001" min="0" inputmode="decimal"/>
+      </div>
+      <div class="row" data-show="dual">
+        <div><label class="homey-form-label" for="t_day" data-i18n="settings.priceDay"></label>
+          <input class="homey-form-input" id="t_day" type="number" step="0.0001" min="0" inputmode="decimal"/></div>
+        <div><label class="homey-form-label" for="t_night" data-i18n="settings.priceNight"></label>
+          <input class="homey-form-input" id="t_night" type="number" step="0.0001" min="0" inputmode="decimal"/></div>
+      </div>
+      <div class="homey-form-group" data-show="dual">
+        <label class="homey-form-label" for="t_profile" data-i18n="settings.profile"></label>
+        <select class="homey-form-select" id="t_profile">
+          <option value="measured" data-i18n="settings.pMeasured"></option>
+          <option value="night" data-i18n="settings.pNight"></option>
+          <option value="mix" data-i18n="settings.pMix"></option>
+          <option value="day" data-i18n="settings.pDay"></option>
+          <option value="custom" data-i18n="settings.pCustom"></option>
+        </select>
+        <p class="homey-subtitle" data-i18n="settings.profileHint"></p>
+      </div>
+      <div class="homey-form-group" data-show="dual" id="g_share">
+        <label class="homey-form-label" for="t_share" data-i18n="settings.nightShare"></label>
+        <input class="homey-form-input" id="t_share" type="number" step="1" min="0" max="100" inputmode="numeric"/>
+      </div>
+      <div class="row" data-show="dual">
+        <div><label class="homey-form-label" for="t_start" data-i18n="settings.offStart"></label>
+          <input class="homey-form-input" id="t_start" type="number" step="1" min="0" max="23" inputmode="numeric"/></div>
+        <div><label class="homey-form-label" for="t_end" data-i18n="settings.offEnd"></label>
+          <input class="homey-form-input" id="t_end" type="number" step="1" min="0" max="23" inputmode="numeric"/></div>
+      </div>
+      <div class="homey-form-group" data-show="dual">
+        <label class="homey-form-checkbox">
+          <input class="homey-form-checkbox-input" id="t_weekend" type="checkbox"/>
+          <span class="homey-form-checkbox-checkmark"></span>
+          <span class="homey-form-checkbox-text" data-i18n="settings.offWeekend"></span>
+        </label>
+      </div>
+      <button class="homey-button-primary" id="t_save" type="button" data-i18n="settings.save"></button>
+    </fieldset>
+
+    <fieldset class="homey-form-fieldset">
+      <legend class="homey-form-legend" data-i18n="settings.months"></legend>
+      <p class="homey-subtitle" data-i18n="settings.monthsHint"></p>
+      <div class="scroll"><table id="months"></table></div>
+      <div class="row">
+        <select class="homey-form-select" id="extMonth"></select>
+        <select class="homey-form-select" id="extYear"></select>
+        <input class="homey-form-input" type="number" step="0.01" min="0" inputmode="decimal" id="extAmount"/>
+        <input class="homey-form-input" type="number" step="0.1" min="0" inputmode="decimal" id="extKwh"/>
+        <input class="homey-form-input" type="number" step="0.1" min="0" inputmode="decimal" id="extPubKwh"/>
+        <input class="homey-form-input" type="number" step="0.01" min="0" inputmode="decimal" id="extPubAmount"/>
+        <button class="homey-button-small" id="extAdd" type="button" data-i18n="settings.addMonth"></button>
+      </div>
+    </fieldset>
+
+    <fieldset class="homey-form-fieldset">
+      <legend class="homey-form-legend" data-i18n="settings.report"></legend>
+      <div class="row">
+        <button class="homey-button-primary" id="copy" type="button" data-i18n="settings.copy"></button>
+        <button class="homey-button-transparent" id="download" type="button" data-i18n="settings.download"></button>
+      </div>
+    </fieldset>
+  </div>
+
+  <script type="text/javascript">
+    let H; let deviceId = null;
+    const $ = (id) => document.getElementById(id);
+    const __ = (k) => H.__(`settings.${k}`);
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const eur = (n) => `${(Math.round(n * 100) / 100).toFixed(2).replace('.', ',')} €`;
+    const sign = (n) => (n < 0 ? 'neg' : 'pos');
+    const q = () => (deviceId ? `?deviceId=${encodeURIComponent(deviceId)}` : '');
+
+    const api = (method, path, body) => new Promise((resolve, reject) => {
+      H.api(method, path, body, (err, res) => (err ? reject(err) : resolve(res)));
+    });
+
+    async function act(method, path, body) {
+      try {
+        render(await api(method, path, body ? { ...body, deviceId } : undefined));
+      } catch (err) {
+        H.alert((err && err.message) || String(err), 'error');
+      }
+    }
+
+    function showTariff() {
+      const mode = $('t_mode').value;
+      document.querySelectorAll('[data-show]').forEach((el) => { el.hidden = el.dataset.show !== mode; });
+      // the custom share is used by "custom", and by "measured" as fallback / for kWh entered by hand
+      $('g_share').hidden = mode !== 'dual' || !['custom', 'measured'].includes($('t_profile').value);
+    }
+
+    function fillTariff(t) {
+      if (!t) return;
+      $('t_mode').value = t.cost_mode || 'monta';
+      $('t_fixed').value = t.price_fixed || '';
+      $('t_day').value = t.price_day || '';
+      $('t_night').value = t.price_night || '';
+      $('t_profile').value = t.night_profile || 'measured';
+      $('t_share').value = t.night_share ?? 80;
+      $('t_start').value = t.offpeak_start ?? 22;
+      $('t_end').value = t.offpeak_end ?? 7;
+      $('t_weekend').checked = t.offpeak_weekend !== false;
+      showTariff();
+    }
+
+    function render(s) {
+      $('none').hidden = true;
+      $('app').hidden = false;
+      const v = s.values;
+      $('cards').innerHTML = [
+        [__('dueMonth'), eur(v.stroohm_refund_due_month), ''],
+        [__('pending'), eur(v.stroohm_refund_pending), ''],
+        [__('paidTotal'), eur(v.stroohm_refund_paid_total), ''],
+        [__('netYear'), eur(v.stroohm_net_year), sign(v.stroohm_net_year)],
+      ].map(([label, value, cls]) => `<div class="card">${esc(label)}<strong class="${cls}">${value}</strong></div>`).join('')
+        + (s.lastSync ? `<div class="muted" style="grid-column:1/-1">${esc(__('lastSync'))} : ${new Date(s.lastSync).toLocaleString()}</div>` : '');
+
+      const w = [];
+      if (s.ignoredExternal && s.ignoredExternal.length) w.push(`${__('ignored')} ${s.ignoredExternal.join(', ')}`);
+      $('warnings').innerHTML = w.map((x) => `<p class="homey-subtitle">⚠️ ${esc(x)}</p>`).join('');
+
+      $('months').innerHTML = `<tr><th>${esc(__('month'))}</th><th>${esc(__('kwh'))}</th><th>${esc(__('due'))}</th>`
+        + `<th>${esc(__('external'))}</th><th>${esc(__('paid'))}</th><th>${esc(__('rest'))}</th><th>${esc(__('net'))}</th>`
+        + `<th>${esc(__('publicKwh'))}</th><th>${esc(__('publicAmount'))}</th></tr>`
+        + [...s.months].reverse().map((m) => `<tr>
+            <td>${m.key}${m.legacy ? ` <span class="muted">(${esc(__('older'))})</span>` : ''}</td>
+            <td>${m.legacy ? `<input class="homey-form-input" type="number" step="0.1" min="0" inputmode="decimal" data-month="${m.key}" data-field="kwh" value="${m.externalKwh || ''}" placeholder="kWh"/>` : m.kwh}</td>
+            <td>${eur(m.due)}</td>
+            <td>${m.legacy ? `<input class="homey-form-input" type="number" step="0.01" min="0" inputmode="decimal" data-month="${m.key}" data-field="amount" value="${m.external || ''}"/>` : '–'}</td>
+            <td>${eur(m.paid)}</td>
+            <td>${m.pending > 0.005 ? eur(m.pending) : '–'}</td>
+            <td class="${m.costKnown ? sign(m.due - m.cost) : ''}">${m.costKnown ? eur(m.due - m.cost) : '–'}</td>
+            <td>${m.legacy ? `<input class="homey-form-input" type="number" step="0.1" min="0" inputmode="decimal" data-month="${m.key}" data-field="publicKwh" value="${m.externalPublicKwh || ''}" placeholder="kWh"/>` : m.publicKwh}</td>
+            <td>${m.legacy ? `<input class="homey-form-input" type="number" step="0.01" min="0" inputmode="decimal" data-month="${m.key}" data-field="publicAmount" value="${m.externalPublicAmount || ''}"/>` : eur(m.publicAmount)}</td>
+          </tr>`).join('');
+      document.querySelectorAll('#months input[data-month]').forEach((el) => {
+        el.addEventListener('change', () => {
+          const row = (f) => document.querySelector(`#months input[data-month="${el.dataset.month}"][data-field="${f}"]`).value || 0;
+          act('POST', '/external', {
+            month: el.dataset.month, amount: row('amount'), kwh: row('kwh'), publicKwh: row('publicKwh'), publicAmount: row('publicAmount'),
+          });
+        });
+      });
+
+    }
+
+    async function load() {
+      const res = await api('GET', `/state${q()}`);
+      if (!res.devices.length) { $('none').hidden = false; $('app').hidden = true; return; }
+      deviceId = res.deviceId;
+      $('deviceGroup').hidden = res.devices.length < 2;
+      $('device').innerHTML = res.devices.map((d) => `<option value="${esc(d.id)}" ${d.id === deviceId ? 'selected' : ''}>${esc(d.name)}</option>`).join('');
+      render(res.state);
+      fillTariff(res.state.tariff);
+    }
+
+    function onHomeyReady(Homey) {
+      H = Homey;
+      $('extAmount').placeholder = __('amount');
+      $('extKwh').placeholder = __('kwhOptional');
+      $('extPubKwh').placeholder = __('publicKwhOptional');
+      $('extPubAmount').placeholder = __('publicAmountOptional');
+
+      $('device').addEventListener('change', () => { deviceId = $('device').value; load(); });
+      // <input type="month"> is not supported by the Homey webview: month + year selects instead.
+      const lang = H.__('lang') || 'en';
+      const monthName = (m) => new Intl.DateTimeFormat(lang, { month: 'long' }).format(new Date(2000, m - 1, 1));
+      const y0 = new Date().getFullYear();
+      $('extMonth').innerHTML = `<option value="">${esc(__('wholeYear'))}</option>`
+        + Array.from({ length: 12 }, (_, i) => `<option value="${String(i + 1).padStart(2, '0')}">${esc(monthName(i + 1))}</option>`).join('');
+      $('extYear').innerHTML = Array.from({ length: 8 }, (_, i) => `<option value="${y0 - i}">${y0 - i}</option>`).join('');
+
+      $('extAdd').addEventListener('click', async () => {
+        const ids = ['extAmount', 'extKwh', 'extPubKwh', 'extPubAmount'];
+        if (!ids.some((id) => $(id).value)) return;
+        const period = $('extMonth').value ? `${$('extYear').value}-${$('extMonth').value}` : $('extYear').value;
+        await act('POST', '/external', {
+          month: period, amount: $('extAmount').value || 0, kwh: $('extKwh').value || 0,
+          publicKwh: $('extPubKwh').value || 0, publicAmount: $('extPubAmount').value || 0,
+        });
+        ids.forEach((id) => { $(id).value = ''; });
+      });
+      $('t_mode').addEventListener('change', showTariff);
+      $('t_profile').addEventListener('change', showTariff);
+      $('t_save').addEventListener('click', async () => {
+        await act('POST', '/tariff', {
+          cost_mode: $('t_mode').value, price_fixed: $('t_fixed').value, price_day: $('t_day').value,
+          price_night: $('t_night').value, night_profile: $('t_profile').value, night_share: $('t_share').value,
+          offpeak_start: $('t_start').value, offpeak_end: $('t_end').value, offpeak_weekend: $('t_weekend').checked,
+        });
+        H.alert(__('saved'), 'info');
+      });
+
+      const csv = () => api('GET', `/csv${q()}`);
+      $('copy').addEventListener('click', async () => {
+        const text = await csv();
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch (e) {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+        }
+        H.alert(__('copied'), 'info');
+      });
+      $('download').addEventListener('click', async () => {
+        const url = URL.createObjectURL(new Blob([await csv()], { type: 'text/csv;charset=utf-8' }));
+        const a = document.createElement('a');
+        a.href = url; a.download = 'stroohm-refund.csv'; a.click();
+        URL.revokeObjectURL(url);
+      });
+
+      load().catch((err) => H.alert((err && err.message) || String(err), 'error')).finally(() => Homey.ready());
+    }
+  </script>
+</body>
+</html>

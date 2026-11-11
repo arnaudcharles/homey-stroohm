@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Last session refund",
+    "fr": "Remboursement dernière session",
+    "nl": "Terugbetaling laatste sessie",
+    "de": "Rückerstattung letzter Ladevorgang",
+    "it": "Rimborso ultima sessione"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

@@ -1,0 +1,55 @@
+{
+  "id": "home_session_ended",
+  "title": {
+    "en": "Home charging session ended",
+    "fr": "Session de recharge maison terminée",
+    "nl": "Thuislaadsessie beëindigd",
+    "de": "Ladevorgang zu Hause beendet",
+    "it": "Sessione di ricarica a casa terminata"
+  },
+  "tokens": [
+    {
+      "name": "kwh",
+      "type": "number",
+      "title": {
+        "en": "kWh",
+        "fr": "kWh",
+        "nl": "kWh",
+        "de": "kWh",
+        "it": "kWh"
+      },
+      "example": 12.4
+    },
+    {
+      "name": "refund",
+      "type": "number",
+      "title": {
+        "en": "Refund",
+        "fr": "Remboursement",
+        "nl": "Terugbetaling",
+        "de": "Rückerstattung",
+        "it": "Rimborso"
+      },
+      "example": 4.69
+    },
+    {
+      "name": "net",
+      "type": "number",
+      "title": {
+        "en": "Net result",
+        "fr": "Gain/perte",
+        "nl": "Nettoresultaat",
+        "de": "Nettoergebnis",
+        "it": "Risultato netto"
+      },
+      "example": -2.1
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=driver"
+    }
+  ]
+}

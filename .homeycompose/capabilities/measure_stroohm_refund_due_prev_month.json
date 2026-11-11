@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Refund due last month",
+    "fr": "Remboursement dû mois dernier",
+    "nl": "Terugbetaling verschuldigd vorige maand",
+    "de": "Fällige Rückerstattung letzten Monat",
+    "it": "Rimborso dovuto mese scorso"
+  },
+  "units": {
+    "en": "€"
+  },
+  "decimals": 2,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}

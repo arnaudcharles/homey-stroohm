@@ -1,0 +1,586 @@
+{
+  "Stroohm": {
+    "de": "Stroohm",
+    "it": "Stroohm"
+  },
+  "Track your home EV charging and the refund from your employer via STROOHM": {
+    "de": "Verfolgen Sie das Laden Ihres E-Autos zu Hause und die Rückerstattung Ihres Arbeitgebers über STROOHM",
+    "it": "Monitora la ricarica a casa della tua auto elettrica e il rimborso del datore di lavoro tramite STROOHM"
+  },
+  "Home charging session ended": {
+    "de": "Ladevorgang zu Hause beendet",
+    "it": "Sessione di ricarica a casa terminata"
+  },
+  "kWh": {
+    "de": "kWh",
+    "it": "kWh"
+  },
+  "Refund": {
+    "de": "Rückerstattung",
+    "it": "Rimborso"
+  },
+  "Net result": {
+    "de": "Nettoergebnis",
+    "it": "Risultato netto"
+  },
+  "A month has been closed": {
+    "de": "Ein Monat wurde abgeschlossen",
+    "it": "Un mese è stato chiuso"
+  },
+  "Month": {
+    "de": "Monat",
+    "it": "Mese"
+  },
+  "Home kWh": {
+    "de": "kWh zu Hause",
+    "it": "kWh a casa"
+  },
+  "Refund due": {
+    "de": "Fällige Rückerstattung",
+    "it": "Rimborso dovuto"
+  },
+  "Pending": {
+    "de": "Ausstehend",
+    "it": "In attesa"
+  },
+  "Public charging session ended": {
+    "de": "Öffentlicher Ladevorgang beendet",
+    "it": "Sessione di ricarica pubblica terminata"
+  },
+  "Amount": {
+    "de": "Betrag",
+    "it": "Importo"
+  },
+  "The refund rate changed": {
+    "de": "Der Erstattungssatz hat sich geändert",
+    "it": "La tariffa di rimborso è cambiata"
+  },
+  "Old rate": {
+    "de": "Alter Satz",
+    "it": "Tariffa precedente"
+  },
+  "New rate": {
+    "de": "Neuer Satz",
+    "it": "Nuova tariffa"
+  },
+  "A monthly report is ready": {
+    "de": "Ein Monatsbericht ist bereit",
+    "it": "Un report mensile è pronto"
+  },
+  "Summary": {
+    "de": "Zusammenfassung",
+    "it": "Riepilogo"
+  },
+  "CSV": {
+    "de": "CSV",
+    "it": "CSV"
+  },
+  "Received": {
+    "de": "Erhalten",
+    "it": "Ricevuto"
+  },
+  "The result this month is negative": {
+    "de": "Das Ergebnis dieses Monats ist negativ",
+    "it": "Il risultato di questo mese è negativo"
+  },
+  "This month's result is !{{negative|not negative}}": {
+    "de": "Das Ergebnis dieses Monats ist !{{negativ|nicht negativ}}",
+    "it": "Il risultato di questo mese !{{è negativo|non è negativo}}"
+  },
+  "Pending refund is above an amount": {
+    "de": "Ausstehende Rückerstattung liegt über einem Betrag",
+    "it": "Il rimborso in attesa supera un importo"
+  },
+  "Pending refund is !{{above|not above}} [[amount]] €": {
+    "de": "Ausstehende Rückerstattung liegt !{{über|nicht über}} [[amount]] €",
+    "it": "Il rimborso in attesa !{{supera|non supera}} [[amount]] €"
+  },
+  "50": {
+    "de": "50",
+    "it": "50"
+  },
+  "Generate a monthly report": {
+    "de": "Monatsbericht erstellen",
+    "it": "Genera un report mensile"
+  },
+  "Generate the report of [[month]]": {
+    "de": "Bericht für [[month]] erstellen",
+    "it": "Genera il report di [[month]]"
+  },
+  "Month (YYYY-MM, empty = last month)": {
+    "de": "Monat (JJJJ-MM, leer = letzter Monat)",
+    "it": "Mese (AAAA-MM, vuoto = mese scorso)"
+  },
+  "2026-10": {
+    "de": "2026-10",
+    "it": "2026-10"
+  },
+  "Refresh now": {
+    "de": "Jetzt aktualisieren",
+    "it": "Aggiorna ora"
+  },
+  "Synchronisation": {
+    "de": "Synchronisierung",
+    "it": "Sincronizzazione"
+  },
+  "Refresh interval (minutes)": {
+    "de": "Aktualisierungsintervall (Minuten)",
+    "it": "Intervallo di aggiornamento (minuti)"
+  },
+  "Home charger id(s), comma separated": {
+    "de": "ID(s) der Heimladestation, durch Komma getrennt",
+    "it": "ID della/e colonnina/e di casa, separati da virgola"
+  },
+  "Track from (YYYY-MM-DD, optional)": {
+    "de": "Verfolgen ab (JJJJ-MM-TT, optional)",
+    "it": "Monitora dal (AAAA-MM-GG, facoltativo)"
+  },
+  "Electricity cost": {
+    "de": "Stromkosten",
+    "it": "Costo dell'elettricità"
+  },
+  "Cost based on": {
+    "de": "Kosten berechnet nach",
+    "it": "Costo calcolato in base a"
+  },
+  "STROOHM app: the tariff set in the STROOHM app. Fixed / day-night: your own tariff, applied to every home session (also past ones).": {
+    "de": "STROOHM-App: der in der STROOHM-App hinterlegte Tarif. Fest / Tag-Nacht: Ihr eigener Tarif, angewendet auf jeden Ladevorgang zu Hause (auch frühere).",
+    "it": "App STROOHM: la tariffa impostata nell'app STROOHM. Fissa / giorno-notte: la tua tariffa, applicata a ogni sessione a casa (anche passate)."
+  },
+  "STROOHM app tariff": {
+    "de": "Tarif aus der STROOHM-App",
+    "it": "Tariffa dell'app STROOHM"
+  },
+  "Fixed price": {
+    "de": "Festpreis",
+    "it": "Prezzo fisso"
+  },
+  "Day / night (dual rate)": {
+    "de": "Tag / Nacht (Doppeltarif)",
+    "it": "Giorno / notte (bioraria)"
+  },
+  "Day price (peak)": {
+    "de": "Tagpreis (Hochtarif)",
+    "it": "Prezzo giorno (ore di punta)"
+  },
+  "Night price (off-peak)": {
+    "de": "Nachtpreis (Niedertarif)",
+    "it": "Prezzo notte (fuori punta)"
+  },
+  "Day / night split": {
+    "de": "Aufteilung Tag / Nacht",
+    "it": "Ripartizione giorno / notte"
+  },
+  "Measured: the real hour of each kWh (from STROOHM/Monta), priced on your off-peak hours. Otherwise a fixed split.": {
+    "de": "Gemessen: die tatsächliche Stunde jeder kWh (von STROOHM/Monta), bewertet nach Ihren Niedertarifzeiten. Sonst eine feste Aufteilung.",
+    "it": "Misurata: l'ora reale di ogni kWh (da STROOHM/Monta), valorizzata secondo le tue fasce fuori punta. Altrimenti una ripartizione fissa."
+  },
+  "Measured (recommended)": {
+    "de": "Gemessen (empfohlen)",
+    "it": "Misurata (consigliato)"
+  },
+  "Always at night (low)": {
+    "de": "Immer nachts (niedrig)",
+    "it": "Sempre di notte (bassa)"
+  },
+  "50 % / 50 % (average)": {
+    "de": "50 % / 50 % (Durchschnitt)",
+    "it": "50 % / 50 % (media)"
+  },
+  "Always by day (high)": {
+    "de": "Immer tagsüber (hoch)",
+    "it": "Sempre di giorno (alta)"
+  },
+  "Custom share": {
+    "de": "Eigener Anteil",
+    "it": "Quota personalizzata"
+  },
+  "Share charged at night (custom)": {
+    "de": "Nachts geladener Anteil (eigener)",
+    "it": "Quota ricaricata di notte (personalizzata)"
+  },
+  "Off-peak starts at": {
+    "de": "Niedertarif ab",
+    "it": "Fuori punta dalle"
+  },
+  "Off-peak ends at": {
+    "de": "Niedertarif bis",
+    "it": "Fuori punta fino alle"
+  },
+  "Whole weekend is off-peak": {
+    "de": "Ganzes Wochenende im Niedertarif",
+    "it": "Tutto il weekend fuori punta"
+  },
+  "Average electricity price this month": {
+    "de": "Durchschnittlicher Strompreis diesen Monat",
+    "it": "Prezzo medio dell'elettricità questo mese"
+  },
+  "Electricity cost this month": {
+    "de": "Stromkosten diesen Monat",
+    "it": "Costo elettricità questo mese"
+  },
+  "Home charging this month": {
+    "de": "Laden zu Hause diesen Monat",
+    "it": "Ricarica a casa questo mese"
+  },
+  "Home charging last month": {
+    "de": "Laden zu Hause letzten Monat",
+    "it": "Ricarica a casa mese scorso"
+  },
+  "Home charging total": {
+    "de": "Laden zu Hause gesamt",
+    "it": "Ricarica a casa totale"
+  },
+  "Home charging this year": {
+    "de": "Laden zu Hause dieses Jahr",
+    "it": "Ricarica a casa quest'anno"
+  },
+  "Home share this month": {
+    "de": "Anteil zu Hause diesen Monat",
+    "it": "Quota a casa questo mese"
+  },
+  "Home share total": {
+    "de": "Anteil zu Hause gesamt",
+    "it": "Quota a casa totale"
+  },
+  "Home share this year": {
+    "de": "Anteil zu Hause dieses Jahr",
+    "it": "Quota a casa quest'anno"
+  },
+  "Last home session": {
+    "de": "Letzter Ladevorgang zu Hause",
+    "it": "Ultima sessione a casa"
+  },
+  "Last session refund": {
+    "de": "Rückerstattung letzter Ladevorgang",
+    "it": "Rimborso ultima sessione"
+  },
+  "Net result this month": {
+    "de": "Nettoergebnis diesen Monat",
+    "it": "Risultato netto questo mese"
+  },
+  "Net result total": {
+    "de": "Nettoergebnis gesamt",
+    "it": "Risultato netto totale"
+  },
+  "Net result this year": {
+    "de": "Nettoergebnis dieses Jahr",
+    "it": "Risultato netto quest'anno"
+  },
+  "Public charging cost this month": {
+    "de": "Kosten öffentliches Laden diesen Monat",
+    "it": "Costo ricarica pubblica questo mese"
+  },
+  "Public charging cost total": {
+    "de": "Kosten öffentliches Laden gesamt",
+    "it": "Costo ricarica pubblica totale"
+  },
+  "Public charging cost this year": {
+    "de": "Kosten öffentliches Laden dieses Jahr",
+    "it": "Costo ricarica pubblica quest'anno"
+  },
+  "Public charging this month": {
+    "de": "Öffentliches Laden diesen Monat",
+    "it": "Ricarica pubblica questo mese"
+  },
+  "Public charging total": {
+    "de": "Öffentliches Laden gesamt",
+    "it": "Ricarica pubblica totale"
+  },
+  "Public charging this year": {
+    "de": "Öffentliches Laden dieses Jahr",
+    "it": "Ricarica pubblica quest'anno"
+  },
+  "Refund rate": {
+    "de": "Erstattungssatz",
+    "it": "Tariffa di rimborso"
+  },
+  "Refund due this month": {
+    "de": "Fällige Rückerstattung diesen Monat",
+    "it": "Rimborso dovuto questo mese"
+  },
+  "Refund due last month": {
+    "de": "Fällige Rückerstattung letzten Monat",
+    "it": "Rimborso dovuto mese scorso"
+  },
+  "Refund due total": {
+    "de": "Fällige Rückerstattung gesamt",
+    "it": "Rimborso dovuto totale"
+  },
+  "Refund due this year": {
+    "de": "Fällige Rückerstattung dieses Jahr",
+    "it": "Rimborso dovuto quest'anno"
+  },
+  "Refunded total (assumed)": {
+    "de": "Erstattet gesamt (angenommen)",
+    "it": "Rimborsato totale (stimato)"
+  },
+  "Refund pending": {
+    "de": "Ausstehende Rückerstattung",
+    "it": "Rimborso in attesa"
+  },
+  "Refund projected this month": {
+    "de": "Erwartete Rückerstattung diesen Monat",
+    "it": "Rimborso previsto questo mese"
+  },
+  "Last session date": {
+    "de": "Datum letzter Ladevorgang",
+    "it": "Data ultima sessione"
+  },
+  "Create an API key": {
+    "de": "API-Schlüssel erstellen",
+    "it": "Crea una chiave API"
+  },
+  "Sign in at platform.stroohm.com with your usual STROOHM account.": {
+    "de": "Melden Sie sich auf platform.stroohm.com mit Ihrem üblichen STROOHM-Konto an.",
+    "it": "Accedi a platform.stroohm.com con il tuo account STROOHM abituale."
+  },
+  "Copy the Client ID and the Client secret. The secret is shown only once.": {
+    "de": "Kopieren Sie die Client ID und das Client secret. Das Secret wird nur einmal angezeigt.",
+    "it": "Copia il Client ID e il Client secret. Il secret viene mostrato una sola volta."
+  },
+  "The key stays on your Homey and is only sent to STROOHM/Monta.": {
+    "de": "Der Schlüssel bleibt auf Ihrem Homey und wird nur an STROOHM/Monta gesendet.",
+    "it": "La chiave resta sul tuo Homey e viene inviata solo a STROOHM/Monta."
+  },
+  "Next": {
+    "de": "Weiter",
+    "it": "Avanti"
+  },
+  "Your API key": {
+    "de": "Ihr API-Schlüssel",
+    "it": "La tua chiave API"
+  },
+  "Client ID": {
+    "de": "Client ID",
+    "it": "Client ID"
+  },
+  "Client secret": {
+    "de": "Client secret",
+    "it": "Client secret"
+  },
+  "Connect": {
+    "de": "Verbinden",
+    "it": "Connetti"
+  },
+  "Enter both the Client ID and the Client secret.": {
+    "de": "Geben Sie die Client ID und das Client secret ein.",
+    "it": "Inserisci il Client ID e il Client secret."
+  },
+  "What have you already received?": {
+    "de": "Was haben Sie bereits erhalten?",
+    "it": "Cosa hai già ricevuto?"
+  },
+  "Home charger(s)": {
+    "de": "Heimladestation(en)",
+    "it": "Colonnina/e di casa"
+  },
+  "Received before Monta": {
+    "de": "Vor Monta erhalten",
+    "it": "Ricevuto prima di Monta"
+  },
+  "Optional: what you received before Monta (previous platform), the kWh charged at home, and your public/office charging (kWh and cost) — per month, or per year if you only know the totals. Home kWh are costed with the average of your tariff (device settings); entering public kWh keeps the home share accurate. Editable later in the app settings.": {
+    "de": "Optional: was Sie vor Monta erhalten haben (frühere Plattform), die zu Hause geladenen kWh und Ihr öffentliches Laden bzw. Laden im Büro (kWh und Kosten) – pro Monat oder pro Jahr, wenn Sie nur die Summen kennen. kWh zu Hause werden mit dem Durchschnitt Ihres Tarifs bewertet (Geräteeinstellungen); öffentliche kWh halten den Anteil zu Hause genau. Später in den App-Einstellungen änderbar.",
+    "it": "Facoltativo: ciò che hai ricevuto prima di Monta (piattaforma precedente), i kWh ricaricati a casa e le ricariche pubbliche/in ufficio (kWh e costo) — per mese, o per anno se conosci solo i totali. I kWh a casa sono valorizzati con la media della tua tariffa (impostazioni del dispositivo); i kWh pubblici mantengono esatta la quota a casa. Modificabile in seguito nelle impostazioni dell'app."
+  },
+  "Amount (€)": {
+    "de": "Betrag (€)",
+    "it": "Importo (€)"
+  },
+  "Add a month": {
+    "de": "Monat hinzufügen",
+    "it": "Aggiungi un mese"
+  },
+  "Add device": {
+    "de": "Gerät hinzufügen",
+    "it": "Aggiungi dispositivo"
+  },
+  "Whole year": {
+    "de": "Ganzes Jahr",
+    "it": "Tutto l'anno"
+  },
+  "Year": {
+    "de": "Jahr",
+    "it": "Anno"
+  },
+  "Monta pays the refund of each month on the 1st of the next month: the app assumes every closed month is refunded and shows the current month as pending. Nothing to confirm.": {
+    "de": "Monta zahlt die Rückerstattung jedes Monats am 1. des Folgemonats: Die App betrachtet jeden abgeschlossenen Monat als erstattet und zeigt den laufenden Monat als ausstehend. Nichts zu bestätigen.",
+    "it": "Monta paga il rimborso di ogni mese il 1° del mese successivo: l'app considera rimborsato ogni mese chiuso e mostra il mese in corso come in attesa. Niente da confermare."
+  },
+  "kWh charged (optional)": {
+    "de": "Geladene kWh (optional)",
+    "it": "kWh ricaricati (facoltativo)"
+  },
+  "Public kWh (optional)": {
+    "de": "Öffentliche kWh (optional)",
+    "it": "kWh pubblici (facoltativo)"
+  },
+  "Public cost € (optional)": {
+    "de": "Öffentliche Kosten € (optional)",
+    "it": "Costo pubblico € (facoltativo)"
+  },
+  "Add a Stroohm device first, then come back here.": {
+    "de": "Fügen Sie zuerst ein Stroohm-Gerät hinzu und kommen Sie dann hierher zurück.",
+    "it": "Aggiungi prima un dispositivo Stroohm, poi torna qui."
+  },
+  "Device": {
+    "de": "Gerät",
+    "it": "Dispositivo"
+  },
+  "Due this month": {
+    "de": "Fällig diesen Monat",
+    "it": "Dovuto questo mese"
+  },
+  "Refunded (assumed, total)": {
+    "de": "Erstattet (angenommen, gesamt)",
+    "it": "Rimborsato (stimato, totale)"
+  },
+  "Result this year": {
+    "de": "Ergebnis dieses Jahr",
+    "it": "Risultato quest'anno"
+  },
+  "Last sync": {
+    "de": "Letzte Synchronisierung",
+    "it": "Ultima sincronizzazione"
+  },
+  "Months": {
+    "de": "Monate",
+    "it": "Mesi"
+  },
+  "\"Before Monta\": amount received, home kWh, public kWh and public cost before Monta for that month or year (all optional). Home kWh are costed with the average of your tariff; the home share only includes periods where public kWh are entered. Empty or 0 removes it.": {
+    "de": "„Vor Monta“: erhaltener Betrag, kWh zu Hause, öffentliche kWh und öffentliche Kosten vor Monta für diesen Monat oder dieses Jahr (alles optional). kWh zu Hause werden mit dem Durchschnitt Ihres Tarifs bewertet; der Anteil zu Hause berücksichtigt nur Zeiträume mit eingegebenen öffentlichen kWh. Leer oder 0 entfernt den Eintrag.",
+    "it": "\"Prima di Monta\": importo ricevuto, kWh a casa, kWh pubblici e costo pubblico prima di Monta per quel mese o anno (tutto facoltativo). I kWh a casa sono valorizzati con la media della tua tariffa; la quota a casa considera solo i periodi con kWh pubblici inseriti. Vuoto o 0 per eliminare."
+  },
+  "Due": {
+    "de": "Fällig",
+    "it": "Dovuto"
+  },
+  "Before Monta (€)": {
+    "de": "Vor Monta (€)",
+    "it": "Prima di Monta (€)"
+  },
+  "Refunded (assumed)": {
+    "de": "Erstattet (angenommen)",
+    "it": "Rimborsato (stimato)"
+  },
+  "Result": {
+    "de": "Ergebnis",
+    "it": "Risultato"
+  },
+  "older": {
+    "de": "älter",
+    "it": "precedente"
+  },
+  "Add": {
+    "de": "Hinzufügen",
+    "it": "Aggiungi"
+  },
+  "Monthly report (CSV)": {
+    "de": "Monatsbericht (CSV)",
+    "it": "Report mensile (CSV)"
+  },
+  "Copy CSV": {
+    "de": "CSV kopieren",
+    "it": "Copia CSV"
+  },
+  "Download CSV": {
+    "de": "CSV herunterladen",
+    "it": "Scarica CSV"
+  },
+  "CSV copied. Paste it into Excel or Google Sheets.": {
+    "de": "CSV kopiert. Fügen Sie sie in Excel oder Google Sheets ein.",
+    "it": "CSV copiato. Incollalo in Excel o Google Sheets."
+  },
+  "Ignored: Monta already has data for": {
+    "de": "Ignoriert, Monta hat bereits Daten für:",
+    "it": "Ignorato, Monta ha già dati per:"
+  },
+  "kWh (optional)": {
+    "de": "kWh (optional)",
+    "it": "kWh (facoltativo)"
+  },
+  "Public kWh": {
+    "de": "Öffentliche kWh",
+    "it": "kWh pubblici"
+  },
+  "Public cost": {
+    "de": "Öffentliche Kosten",
+    "it": "Costo pubblico"
+  },
+  "How the cost of home charging is calculated (also editable in the device settings). Gain/loss = refund − this cost.": {
+    "de": "Wie die Kosten des Ladens zu Hause berechnet werden (auch in den Geräteeinstellungen änderbar). Gewinn/Verlust = Rückerstattung − diese Kosten.",
+    "it": "Come viene calcolato il costo della ricarica a casa (modificabile anche nelle impostazioni del dispositivo). Guadagno/perdita = rimborso − questo costo."
+  },
+  "Tariff set in the STROOHM app": {
+    "de": "In der STROOHM-App hinterlegter Tarif",
+    "it": "Tariffa impostata nell'app STROOHM"
+  },
+  "Fixed price (€/kWh)": {
+    "de": "Festpreis (€/kWh)",
+    "it": "Prezzo fisso (€/kWh)"
+  },
+  "Day price (€/kWh)": {
+    "de": "Tagpreis (€/kWh)",
+    "it": "Prezzo giorno (€/kWh)"
+  },
+  "Night price (€/kWh)": {
+    "de": "Nachtpreis (€/kWh)",
+    "it": "Prezzo notte (€/kWh)"
+  },
+  "Always at night (low average)": {
+    "de": "Immer nachts (niedriger Durchschnitt)",
+    "it": "Sempre di notte (media bassa)"
+  },
+  "Always by day (high average)": {
+    "de": "Immer tagsüber (hoher Durchschnitt)",
+    "it": "Sempre di giorno (media alta)"
+  },
+  "Measured: the real hour of each kWh (Monta data), priced on your off-peak hours. The other choices apply a fixed average. kWh entered by hand (before Monta) always use the average: the custom share when \"Measured\" is chosen.": {
+    "de": "Gemessen: die tatsächliche Stunde jeder kWh (Monta-Daten), bewertet nach Ihren Niedertarifzeiten. Die anderen Optionen wenden einen festen Durchschnitt an. Von Hand eingegebene kWh (vor Monta) nutzen immer einen Durchschnitt: den eigenen Anteil, wenn „Gemessen“ gewählt ist.",
+    "it": "Misurata: l'ora reale di ogni kWh (dati Monta), valorizzata secondo le tue fasce fuori punta. Le altre scelte applicano una media fissa. I kWh inseriti a mano (prima di Monta) usano sempre una media: la quota personalizzata quando è scelto \"Misurata\"."
+  },
+  "Share charged at night (%)": {
+    "de": "Nachts geladener Anteil (%)",
+    "it": "Quota ricaricata di notte (%)"
+  },
+  "Off-peak from (h)": {
+    "de": "Niedertarif ab (h)",
+    "it": "Fuori punta dalle (h)"
+  },
+  "Off-peak until (h)": {
+    "de": "Niedertarif bis (h)",
+    "it": "Fuori punta fino alle (h)"
+  },
+  "Save": {
+    "de": "Speichern",
+    "it": "Salva"
+  },
+  "Saved, values recalculated.": {
+    "de": "Gespeichert, Werte neu berechnet.",
+    "it": "Salvato, valori ricalcolati."
+  },
+  "Refund this month": {
+    "de": "Rückerstattung diesen Monat",
+    "it": "Rimborso del mese"
+  },
+  "Leave empty to use your only Stroohm device.": {
+    "de": "Leer lassen, um Ihr einziges Stroohm-Gerät zu verwenden.",
+    "it": "Lascia vuoto per usare il tuo unico dispositivo Stroohm."
+  },
+  "Home": {
+    "de": "Zu Hause",
+    "it": "Casa"
+  },
+  "Projected for the month:": {
+    "de": "Prognose für den Monat:",
+    "it": "Previsione per il mese:"
+  },
+  "Add a Stroohm device to see your refund here.": {
+    "de": "Fügen Sie ein Stroohm-Gerät hinzu, um Ihre Rückerstattung hier zu sehen.",
+    "it": "Aggiungi un dispositivo Stroohm per vedere qui il tuo rimborso."
+  },
+  "At the bottom left, click your name, then \"Profile\". At the top right, open \"Personal API keys\", click \"+ New\" and create an application, for example named \"Homey\".": {
+    "de": "Klicken Sie unten links auf Ihren Namen und dann auf „Profil“. Öffnen Sie oben rechts „Persönliche API-Schlüssel“, klicken Sie auf „+ Neu“ und erstellen Sie eine Anwendung, zum Beispiel mit dem Namen „Homey“.",
+    "it": "In basso a sinistra, clicca sul tuo nome e poi su \"Profilo\". In alto a destra, apri \"Chiavi API personali\", clicca su \"+ Nuovo\" e crea un'applicazione, per esempio chiamata \"Homey\"."
+  }
+}

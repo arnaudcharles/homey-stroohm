@@ -1,0 +1,19 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Public charging this month",
+    "fr": "Recharge publique ce mois",
+    "nl": "Openbaar laden deze maand",
+    "de": "Öffentliches Laden diesen Monat",
+    "it": "Ricarica pubblica questo mese"
+  },
+  "units": {
+    "en": "kWh"
+  },
+  "decimals": 1,
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/icon.svg",
+  "insights": true
+}
